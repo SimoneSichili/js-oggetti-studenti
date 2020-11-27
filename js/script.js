@@ -8,12 +8,13 @@ $(document).ready(function () {
     //Esercizio #1
     var student = {
         nome: "Mario",
-        cognome: "Rossi",
+        cognome: "Red",
         eta: 25,
     };
 
     for (var k in student) {
-        console.log("Esercizio #1 " + k + ": " + student[k]);
+        console.log("Esercizio #1 " + student[k]);
+        document.getElementById("result-one").innerHTML += student[k] + "<br>";
     }
 
     //Esercizio #2
@@ -42,24 +43,29 @@ $(document).ready(function () {
 
     for(i = 0; i < students.length; i++) {
         console.log("Esercizio #2 " + students[i].nome + " " + students[i].cognome);
+        document.getElementById("result-two").innerHTML += students[i].nome + " " + students[i].cognome + "<br>";
     }
 
     //Esercizio #3
     console.log("Esercizio #3:lista prima dell'aggiunta", students);
 
-    //Definisco un nuovo utente
+    // Definisco un nuovo utente
     var newStudent = {
         nome: prompt("Inserisci un nome"),
         cognome: prompt("Inserisci un cognome"),
         eta: parseInt(prompt("Inserisci un'età'")),
     };
 
+
     students.push(newStudent);
 
     console.log("Esercizio #3:lista dopo l'aggiunta", students);
+    
+    for (i = 0;i < students.length; i++) {
+        document.getElementById("result-three").innerHTML += students[i].nome + " " + students[i].cognome + " " + students[i].eta + "<br>";
+    };
 
     //END JS
 });
 
 // MY FUNCTIONS--------------------------
-
